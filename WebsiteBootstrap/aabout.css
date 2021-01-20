@@ -1,0 +1,107 @@
+html, body{
+	background-color:;
+	color: black;
+}
+
+.padded{
+	padding: 100px 40px;
+	text-align: center;
+}
+
+
+.padded1{
+	padding: 100px 30px 200px;
+
+}
+.comment{
+	background-image: url(img/y.jpg);
+	padding: 100px 0;
+	background-size: cover;
+	background-attachment: fixed;
+
+}
+
+.text-muted{
+	color: #e9e6df;
+	font-weight: 100;
+}
+.tpad{
+	padding-top: 30px;
+}
+
+
+.link a{
+	color: black;
+	padding: 30px;
+	font-size: 30px;
+}
+.link a:hover{
+	color: gray;
+}
+.tpad1{
+	padding-top: 100px;
+}
+.hotel{
+	background-image: url(img/y.jpg);
+	padding: 60px 0px 90px;
+	background-attachment: fixed;
+	background-size: cover;
+}
+.item1{
+	border-style: hidden ridge;
+}
+.item2{
+	border-style: hidden ridge hidden hidden;
+}
+.member a{
+	color: #000000;
+	font-size: 20px;
+	padding: 10px;
+}
+.member a:hover{
+	color: gray;
+}
+.info .tab-content img{
+	padding: 20px 0 0px 0px;
+}
+.tab-content{
+	padding-top: 20px;
+}
+#room .col-lg-12{
+	padding-top: 30px;
+}
+.info img{
+	width: 100%;
+	background-size: cover;
+}
+#confirm{
+	text-align: center;
+}
+
+
+.padded2{
+	padding-top: 100px;
+	text-align: center;
+}
+
+
+@media(min-width: 768px){
+	.carousel-inner > .item{
+		height: 700px;
+	}
+	.intro-block{
+		padding: 80px 0 100px;
+	}
+	.intro-block1{
+		padding: 80px 0 100px;
+	}	
+}
+@media(max-width: 500px){
+	.ft_space1{
+		padding: 0 10px;
+		text-align: center;
+	}
+	.ft_space1 img{
+		padding: 0 100px 0;
+	}
+}

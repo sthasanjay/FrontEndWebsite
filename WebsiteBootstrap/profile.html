@@ -1,0 +1,136 @@
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			font-family: Lucida Handwriting;
+		}
+		nav{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			background-color: green;
+			transition: all 0.5s ease;
+		}
+		nav ul li{
+			list-style: none;
+			display: inline-block;
+		}
+		nav ul li a{
+			display: block;
+			padding: 20px 40px;
+			text-decoration: none;
+			color: #fff;
+			transition: background-color 0.4s ease;
+		}
+		nav ul li a.active{
+			background-color: #1eaf01;
+		}
+		section{
+			padding: 30% 0;
+			text-align: center;
+		}
+		section.about {
+			background-color: #c5fcba;
+			padding: 5% 0;
+		}
+		section.team { background-color: #9dff89; }
+		section.gallery { background-color: #5af939; }
+		section.testimonials { background-color: #9dff89; }
+		section.contact { background-color: #c5fcba; }
+
+		nav.hidden{
+			transform: translate3d(0, -100%, 0);
+		}
+		.photo{
+			background-size: cover;
+			background-attachment: fixed;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href=".about" class="about-marker active">About</a></li>
+			<li><a href="#" class="team-marker">Team</a></li>
+			<li><a href="#" class="gallery-marker">Gallery</a></li>
+			<li><a href="#" class="testimonials-marker">Testimonials</a></li>
+			<li><a href="#" class="contact-marker">Contact</a></li>
+		</ul>
+	</nav>
+
+	<section class="about">
+		
+		<div class="photo">
+			<img src="img/b.jpg">
+			
+		</div>
+	</section>
+
+	<section class="team">
+		<h1>Team</h1>
+	</section>
+
+	<section class="gallery">
+		<h1>Gallery</h1>
+	</section>
+
+	<section class="testimonials">
+		<h1>Testimonials</h1>
+	</section>
+
+	<section class="contact">
+		<h1>Contact</h1>
+	</section>
+
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var navLinks = $('nav ul li a'),
+				navH = $('nav').height(),
+				section =$('section'),
+				documentE1 = $(document);
+
+			documentE1.on('scroll',function(){
+				var currentScrollPos = documentE1.scrollTop();
+
+				section.each(function(){
+					var self = $(this);
+					if (self.offset().top < (currentScrollPos + navH) && (currentScrollPos + navH) < (self.offset().top + self.outerHeight())){
+						var targetClass = '.' +self.attr('class') + '-marker';
+						navLinks.removeClass('active');
+						$(targetClass).addClass('active');
+					}
+				});
+			});
+		})();
+	</script>
+	<script type="text/javascript">
+		(function(){
+			var documentElem = $(document),
+				nav = $('nav'),
+				lastScrollTop = 0;
+
+			documentElem.on('scroll', function(){
+				var currentScrollTop = $(this).scrollTop();
+
+				//scroll down
+				if(currentScrollTop > lastScrollTop) nav.addClass('hidden');
+
+				//Scroll up
+				else nav.removeClass('hidden');
+
+				lastScrollTop = currentScrollTop;
+			});
+		})();
+	</script>
+	
+</body>
+</html>
